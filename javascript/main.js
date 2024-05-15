@@ -28,6 +28,8 @@ const images = [
   },
 ];
 
+let active = 0;
+
 const items = document.querySelector(".items");
 
 for (let i = 0; i < images.length; i++) {
@@ -41,6 +43,28 @@ for (let i = 0; i < images.length; i++) {
   items.append(div);
 }
 
+document.getElementsByClassName("item")[active].classList.add("active");
+
 document.querySelector(".next").addEventListener("click", function () {
-  div.classList.add("active");
+  document
+    .getElementsByClassName("item", "active")
+    [active].classList.remove("active");
+  active++;
+  if (active <= images.length) {
+    document.getElementsByClassName("item")[active].classList.add("active");
+  } else if ((active = images.length)) {
+    active = 0;
+  }
+});
+
+document.querySelector(".prev").addEventListener("click", function () {
+  document
+    .getElementsByClassName("item", "active")
+    [active].classList.remove("active");
+  active--;
+  if (active <= images.length) {
+    document.getElementsByClassName("item")[active].classList.add("active");
+  } else if ((active = images.length)) {
+    active = 0;
+  }
 });
