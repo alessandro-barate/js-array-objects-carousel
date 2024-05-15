@@ -39,8 +39,8 @@ for (let i = 0; i < images.length; i++) {
   img.src = "../../" + imagesArray.image;
   div.append(img);
   items.append(div);
-
-  document.querySelector(".next").addEventListener("click", function () {
-    div.classList.add("active");
-  });
 }
+
+document.querySelector(".next").addEventListener("click", function () {
+  div.classList.add("active");
+});
