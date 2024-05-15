@@ -33,10 +33,14 @@ const items = document.querySelector(".items");
 for (let i = 0; i < images.length; i++) {
   const imagesArray = images[i];
   const div = document.createElement("div");
-  div.classList.add("item", "active");
+  div.classList.add("item");
 
   const img = document.createElement("img");
   img.src = "../../" + imagesArray.image;
   div.append(img);
   items.append(div);
+
+  document.querySelector(".next").addEventListener("click", function () {
+    div.classList.add("active");
+  });
 }
