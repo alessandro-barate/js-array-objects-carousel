@@ -50,10 +50,11 @@ document.querySelector(".next").addEventListener("click", function () {
     .getElementsByClassName("item", "active")
     [active].classList.remove("active");
   active++;
-  if (active <= images.length) {
-    document.getElementsByClassName("item")[active].classList.add("active");
-  } else if ((active = images.length)) {
+  document.getElementsByClassName("item")[active].classList.add("active");
+  if (active >= images.length) {
     active = 0;
+  } else if (active < 0) {
+    active = images.length - 1;
   }
 });
 
@@ -62,9 +63,5 @@ document.querySelector(".prev").addEventListener("click", function () {
     .getElementsByClassName("item", "active")
     [active].classList.remove("active");
   active--;
-  if (active <= images.length) {
-    document.getElementsByClassName("item")[active].classList.add("active");
-  } else if ((active = images.length)) {
-    active = 0;
-  }
+  document.getElementsByClassName("item")[active].classList.add("active");
 });
