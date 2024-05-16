@@ -40,13 +40,24 @@ const items = document.querySelector(".items");
 // Ciclo sull'array per creare gli elementi HTML
 for (let i = 0; i < images.length; i++) {
   const imagesArray = images[i];
-  const div = document.createElement("div");
-  div.classList.add("item");
+  const div1 = document.createElement("div");
+  div1.classList.add("item");
 
+  const div2 = document.createElement("div");
+
+  const h2 = document.createElement("h2");
+  h2.innerText = imagesArray.title;
+  h2.classList.add("positioning", "bottom-h2");
+
+  const p = document.createElement("p");
+  p.innerText = imagesArray.text;
+  p.classList.add("positioning", "bottom-p");
+
+  div2.append(h2, p);
   const img = document.createElement("img");
   img.src = "../../" + imagesArray.image;
-  div.append(img);
-  items.append(div);
+  div1.append(img, div2);
+  items.append(div1);
 }
 
 // Funzione per settare l'immagine iniziale ed il setInterval
