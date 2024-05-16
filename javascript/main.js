@@ -47,11 +47,11 @@ for (let i = 0; i < images.length; i++) {
 
   const h2 = document.createElement("h2");
   h2.innerText = imagesArray.title;
-  h2.classList.add("positioning", "bottom-h2");
+  h2.classList.add("positioning", "h2", "bg");
 
   const p = document.createElement("p");
   p.innerText = imagesArray.text;
-  p.classList.add("positioning", "bottom-p");
+  p.classList.add("positioning", "p", "bg");
 
   div2.append(h2, p);
   const img = document.createElement("img");
