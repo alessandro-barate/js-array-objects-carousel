@@ -1,101 +1,121 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    width: 900px;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
+  width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .items {
-    width: 700px;
-    height: 300px;
+  width: 700px;
+  height: 300px;
 }
 
 .item {
-    height: 100%;
-    display: none;
-    position: relative;
+  height: 100%;
+  display: none;
 }
 
-.item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.item img,
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .item.active {
-    display: block;
+  display: block;
 }
 
-.thumbs {
-    height: 300px;
-    background: #000;
-    position: relative;
-}
-
-.thumb {
-    height: calc((300px) / 5);
-    opacity: 0.5;
-}
-
-.thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.thumb.active {
-    border: 2px solid #ccc;
-    opacity: 1;
-}
-
-.prev, .next {
-    width: 20px;
-    height: 20px;
-    margin: 10px 0;
-    border-radius: 50%;
-    background: #ccc;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    cursor: pointer;
-    z-index: 999;
+.prev,
+.next {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0;
+  border-radius: 50%;
+  background: #ccc;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  z-index: 999;
 }
 
 .next {
-    bottom: 0;
+  margin-top: 240px;
 }
 
 .prev::after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    display: block;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%) rotate(-45deg);
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%) rotate(-45deg);
 }
 
 .next::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    display: block;
-    position: absolute;
-    bottom: 35%;
-    left: 50%;
-    transform: translate(-50%) rotate(135deg);
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: block;
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translate(-50%) rotate(135deg);
+}
+
+.positioning {
+  position: relative;
+  z-index: 998;
+  padding-right: 45px;
+  padding-left: 50px;
+  text-align: end;
+}
+
+.p {
+  padding-bottom: 32px;
+  bottom: 115px;
+  height: 23%;
+}
+
+.h2 {
+  padding-top: 20px;
+  bottom: 115px;
+}
+
+.bg {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.thumbs {
+  width: 200px;
+  height: 300px;
+  background-color: gray;
+}
+
+.thumb {
+  width: 100%;
+  height: calc(100% / 5);
+  object-fit: cover;
+  /*display: none;*/
+}
+
+.thumb.active {
+  border: 2px solid white;
 }

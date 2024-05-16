@@ -42,9 +42,9 @@ const thumbs = document.querySelector(".thumbs");
 for (let i = 0; i < images.length; i++) {
   const imagesArray = images[i];
   const div1 = document.createElement("div");
+  const div2 = document.createElement("div");
   div1.classList.add("item");
-
-  const thumb = document.createElement("div");
+  div2.classList.add("thumb");
 
   const h2 = document.createElement("h2");
   h2.innerText = imagesArray.title;
@@ -54,12 +54,14 @@ for (let i = 0; i < images.length; i++) {
   p.innerText = imagesArray.text;
   p.classList.add("positioning", "p", "bg");
 
-  const img = document.createElement("img");
-  img.src = "../../" + imagesArray.image;
-  div1.append(img, h2, p);
-  thumb.append(img);
+  const img1 = document.createElement("img");
+  const img2 = document.createElement("img");
+  img1.src = "../../" + imagesArray.image;
+  img2.src = "../../" + imagesArray.image;
+  div1.append(img1, h2, p);
+  div2.append(img2);
   items.append(div1);
-  thumbs.append(thumb);
+  thumbs.append(div2);
 }
 
 // Funzione per settare l'immagine iniziale ed il setInterval
@@ -83,19 +85,27 @@ function previous() {
   document
     .getElementsByClassName("item", "active")
     [active].classList.remove("active");
+  document
+    .getElementsByClassName("thumb", "active")
+    [active].classList.remove("active");
   active--;
   show(active);
   document.getElementsByClassName("item")[active].classList.add("active");
+  document.getElementsByClassName("thumb")[active].classList.add("active");
 }
 
 // Funzione per visualizzare le immagini con il bottone freccia giu
 function next() {
   document
-    .getElementsByClassName("item", "thumb", "active")
+    .getElementsByClassName("item", "active")
+    [active].classList.remove("active");
+  document
+    .getElementsByClassName("thumb", "active")
     [active].classList.remove("active");
   active++;
   show(active);
   document.getElementsByClassName("item")[active].classList.add("active");
+  document.getElementsByClassName("thumb")[active].classList.add("active");
 }
 
 firstImg();
