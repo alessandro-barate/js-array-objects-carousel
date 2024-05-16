@@ -29,7 +29,7 @@ const images = [
 ];
 
 let active = 0;
-let interval = null;
+let interval;
 
 const items = document.querySelector(".items");
 
@@ -57,7 +57,7 @@ function show(index) {
   }
 }
 
-function prev() {
+function previous() {
   clearInterval(interval);
   document
     .getElementsByClassName("item", "active")
@@ -81,4 +81,4 @@ show();
 
 document.querySelector(".next").addEventListener("click", next);
 
-document.querySelector(".prev").addEventListener("click", prev);
+document.querySelector(".prev").addEventListener("click", previous);

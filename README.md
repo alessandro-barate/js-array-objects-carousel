@@ -13,16 +13,23 @@ Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per p
 Al click dell'utente sulle frecce , l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
 
 - Ciclo for per creare i div e gli img
-- Aggiungere le classi css
+- Aggiungere e togliere le classi css al click dei bottoni
+  -- 1 funzione per scorrere in avanti
+  -- 1 funzione per scorrere indietro
 
 Milestone 2:
 Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è la prima e l'utente clicca la freccia verso l'alto, la miniatura che deve attivarsi sarà l'ultima e viceversa per l'ultima miniatura se l'utente clicca la freccia verso il basso.
+
+- Contatore iniziale a 0
+- Se il contatore è minore di 0, torna alla lunghezza dell'array - 1 (ultimo elemento); se è maggiore della lunghezza dell'array, torna a 0.
 
 BONUS 1:
 Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
 
 BONUS 2:
 Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
+
+- Aggiungo un setInterval con tempo 5000 e la funzione per scorrere le immagini
 
 BONUS 3:
 Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
