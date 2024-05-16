@@ -43,8 +43,6 @@ for (let i = 0; i < images.length; i++) {
   const div1 = document.createElement("div");
   div1.classList.add("item");
 
-  const div2 = document.createElement("div");
-
   const h2 = document.createElement("h2");
   h2.innerText = imagesArray.title;
   h2.classList.add("positioning", "h2", "bg");
@@ -53,10 +51,9 @@ for (let i = 0; i < images.length; i++) {
   p.innerText = imagesArray.text;
   p.classList.add("positioning", "p", "bg");
 
-  div2.append(h2, p);
   const img = document.createElement("img");
   img.src = "../../" + imagesArray.image;
-  div1.append(img, div2);
+  div1.append(img, h2, p);
   items.append(div1);
 }
 

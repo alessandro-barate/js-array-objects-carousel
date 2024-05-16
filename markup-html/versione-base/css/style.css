@@ -83,20 +83,20 @@
 
 .positioning {
   position: relative;
-  z-index: 999;
-  padding-left: 20px;
+  z-index: 998;
   padding-right: 20px;
   text-align: end;
 }
 
 .p {
-  padding-bottom: 35px;
-  bottom: 100px;
+  padding-bottom: 32px;
+  bottom: 115px;
+  height: 23%;
 }
 
 .h2 {
   padding-top: 20px;
-  bottom: 100px;
+  bottom: 115px;
 }
 
 .bg {
