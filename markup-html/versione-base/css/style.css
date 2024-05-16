@@ -84,7 +84,8 @@
 .positioning {
   position: relative;
   z-index: 998;
-  padding-right: 20px;
+  padding-right: 45px;
+  padding-left: 50px;
   text-align: end;
 }
 
