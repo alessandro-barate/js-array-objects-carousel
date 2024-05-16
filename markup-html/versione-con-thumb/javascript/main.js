@@ -45,6 +45,13 @@ for (let i = 0; i < images.length; i++) {
   const div2 = document.createElement("div");
   div1.classList.add("item");
   div2.classList.add("thumb");
+  div2.addEventListener("click", function () {
+    document
+      .getElementsByClassName("thumb", "active")
+      [active].classList.remove("active");
+    next(i);
+    document.getElementsByClassName("thumb")[active].classList.add("active");
+  });
 
   const h2 = document.createElement("h2");
   h2.innerText = imagesArray.title;
@@ -94,11 +101,16 @@ function previous() {
 }
 
 // Funzione per visualizzare le immagini con il bottone freccia giu
-function next() {
+function next(pos) {
   document
     .getElementsByClassName("item", "active")
     [active].classList.remove("active");
-  active++;
+
+  if (isNaN(pos)) {
+    active++;
+  } else {
+    active = pos;
+  }
   show(active);
   document.getElementsByClassName("item")[active].classList.add("active");
 }
