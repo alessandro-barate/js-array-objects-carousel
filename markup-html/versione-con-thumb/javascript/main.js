@@ -85,13 +85,9 @@ function previous() {
   document
     .getElementsByClassName("item", "active")
     [active].classList.remove("active");
-  document
-    .getElementsByClassName("thumb", "active")
-    [active].classList.remove("active");
   active--;
   show(active);
   document.getElementsByClassName("item")[active].classList.add("active");
-  document.getElementsByClassName("thumb")[active].classList.add("active");
 }
 
 // Funzione per visualizzare le immagini con il bottone freccia giu
@@ -99,13 +95,9 @@ function next() {
   document
     .getElementsByClassName("item", "active")
     [active].classList.remove("active");
-  document
-    .getElementsByClassName("thumb", "active")
-    [active].classList.remove("active");
   active++;
   show(active);
   document.getElementsByClassName("item")[active].classList.add("active");
-  document.getElementsByClassName("thumb")[active].classList.add("active");
 }
 
 firstImg();
