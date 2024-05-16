@@ -1,5 +1,6 @@
 "use strict";
 
+// Array
 const images = [
   {
     image: "img/01.webp",
@@ -28,11 +29,15 @@ const images = [
   },
 ];
 
+// Variabile contatore
 let active = 0;
+
+// Variabile per il setInterval
 let interval;
 
 const items = document.querySelector(".items");
 
+// Ciclo sull'array per creare gli elementi HTML
 for (let i = 0; i < images.length; i++) {
   const imagesArray = images[i];
   const div = document.createElement("div");
@@ -44,11 +49,13 @@ for (let i = 0; i < images.length; i++) {
   items.append(div);
 }
 
+// Funzione per settare l'immagine iniziale ed il setInterval
 function firstImg() {
   document.getElementsByClassName("item")[active].classList.add("active");
   interval = setInterval(next, 5000);
 }
 
+// Funzione per il loop infinito dello scorrere delle immagini
 function show(index) {
   if (index >= images.length) {
     active = 0;
@@ -57,6 +64,7 @@ function show(index) {
   }
 }
 
+// Funzione per visualizzare le immagini con il bottone freccia su
 function previous() {
   clearInterval(interval);
   document
@@ -67,6 +75,7 @@ function previous() {
   document.getElementsByClassName("item")[active].classList.add("active");
 }
 
+// Funzione per visualizzare le immagini con il bottone freccia giu
 function next() {
   document
     .getElementsByClassName("item", "active")
@@ -79,6 +88,8 @@ function next() {
 firstImg();
 show();
 
+// Evento click bottone freccia giu
 document.querySelector(".next").addEventListener("click", next);
 
+// Evento click bottone freccia su
 document.querySelector(".prev").addEventListener("click", previous);
