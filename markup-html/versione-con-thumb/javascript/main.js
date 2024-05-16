@@ -49,6 +49,7 @@ for (let i = 0; i < images.length; i++) {
     document
       .getElementsByClassName("thumb", "active")
       [active].classList.remove("active");
+
     next(i);
     document.getElementsByClassName("thumb")[active].classList.add("active");
   });
@@ -74,7 +75,7 @@ for (let i = 0; i < images.length; i++) {
 // Funzione per settare l'immagine iniziale ed il setInterval
 function firstImg() {
   document.getElementsByClassName("item")[active].classList.add("active");
-  interval = setInterval(next, 5000);
+  //interval = setInterval(next, 5000);
 }
 
 // Setto la prima immagine come attiva
