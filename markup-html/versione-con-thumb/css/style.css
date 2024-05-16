@@ -41,11 +41,15 @@
   margin: 10px 0;
   border-radius: 50%;
   background: #ccc;
-  position: relative;
+  position: absolute;
   left: 50%;
   transform: translate(-50%);
   cursor: pointer;
   z-index: 999;
+}
+
+.next {
+  bottom: 0px;
 }
 
 .prev::after {

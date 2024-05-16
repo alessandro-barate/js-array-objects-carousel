@@ -70,6 +70,9 @@ function firstImg() {
   interval = setInterval(next, 5000);
 }
 
+// Setto la prima immagine come attiva
+document.getElementsByClassName("thumb")[active].classList.add("active");
+
 // Funzione per il loop infinito dello scorrere delle immagini
 function show(index) {
   if (index >= images.length) {
