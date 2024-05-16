@@ -29,6 +29,7 @@ const images = [
 ];
 
 let active = 0;
+let interval = null;
 
 const items = document.querySelector(".items");
 
@@ -43,25 +44,41 @@ for (let i = 0; i < images.length; i++) {
   items.append(div);
 }
 
-document.getElementsByClassName("item")[active].classList.add("active");
-
-document.querySelector(".next").addEventListener("click", function () {
-  document
-    .getElementsByClassName("item", "active")
-    [active].classList.remove("active");
-  active++;
+function firstImg() {
   document.getElementsByClassName("item")[active].classList.add("active");
-  if (active >= images.length) {
+  interval = setInterval(next, 5000);
+}
+
+function show(index) {
+  if (index >= images.length) {
     active = 0;
-  } else if (active < 0) {
+  } else if (index < 0) {
     active = images.length - 1;
   }
-});
+}
 
-document.querySelector(".prev").addEventListener("click", function () {
+function prev() {
+  clearInterval(interval);
   document
     .getElementsByClassName("item", "active")
     [active].classList.remove("active");
   active--;
+  show(active);
   document.getElementsByClassName("item")[active].classList.add("active");
-});
+}
+
+function next() {
+  document
+    .getElementsByClassName("item", "active")
+    [active].classList.remove("active");
+  active++;
+  show(active);
+  document.getElementsByClassName("item")[active].classList.add("active");
+}
+
+firstImg();
+show();
+
+document.querySelector(".next").addEventListener("click", next);
+
+document.querySelector(".prev").addEventListener("click", prev);
