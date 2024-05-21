@@ -124,3 +124,6 @@ document.querySelector(".next").addEventListener("click", next);
 
 // Evento click bottone freccia su
 document.querySelector(".prev").addEventListener("click", previous);
+
+/*  Aprire ticket perchè la stessa funzione next, se attivato l'interval, dà un
+comportamento strano ai thumbnails  */
